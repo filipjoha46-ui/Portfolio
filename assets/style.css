@@ -214,4 +214,13 @@ body.dark .contact-links a:hover{border-color:var(--ink)}
 .cfg-tabs button{font:inherit;font-size:13px;letter-spacing:.01em;padding:8px 16px;border:1px solid var(--line,rgba(0,0,0,.15));border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
 .cfg-tabs button:hover{border-color:var(--ink)}
 .cfg-tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.cfg-tabs .cfg-dice{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px}
+.cfg-dice svg{width:22px;height:22px;display:block;stroke:currentColor;stroke-width:1.1;stroke-linejoin:round;transition:transform .3s ease}
+.cfg-dice svg path{fill:currentColor}
+.cfg-dice .f1{fill-opacity:.06}.cfg-dice .f2{fill-opacity:.2}.cfg-dice .f3{fill-opacity:.36}
+.cfg-dice svg ellipse,.cfg-dice svg circle{fill:currentColor;stroke:none}
+.cfg-dice:hover svg{transform:rotate(-12deg)}
+.cfg-dice.rolling svg{animation:dice-roll .6s cubic-bezier(.3,1.4,.5,1)}
+@keyframes dice-roll{0%{transform:rotate(0) scale(1)}40%{transform:rotate(200deg) scale(1.2) translateY(-2px)}100%{transform:rotate(360deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){.cfg-dice.rolling svg{animation:none}}
 .viewer + .media{margin-top:clamp(24px,3vw,40px)}
