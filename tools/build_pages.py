@@ -171,7 +171,8 @@ h += chapter("Three principles of light", "Built on ambient luminescence.", """
 
 h += chapter("Process", "From light lab to floating glass.", """
       <p>The work started in a light lab, testing light sources, colour temperature and how light travels through Reijmyre's glass. Coloured glass tints everything and can't stop glare, so the source had to be hidden and the light had to lift the colour rather than depend on it.</p>
-      <p>The insights fed straight into sketching. Of the early concepts, No. 3 became Celina: a small coloured vase suspended inside a large clear <i>Lina</i> vase. Physical test versions were used to judge proportions, hanging height and the glow of the inner glass before committing to the final construction.</p>""",
+      <p>A moodboard then set the expression the lamp should carry: elegant, ambient, classic, Scandinavian and inviting. The insights and the moodboard fed straight into sketching. Of the early concepts, No. 3 became Celina: a small coloured vase suspended inside a large clear <i>Lina</i> vase. Physical test versions were used to judge proportions, hanging height and the glow of the inner glass before committing to the final construction.</p>""",
+    media("", fig("cel-moodboard.jpg", "Moodboard with five images labelled elegant, ambient, classic, Scandinavian and inviting", "r169"), cap="Moodboard defining the expression of the lamp.") +
     media("c2", fig("cel-lab-grid.jpg", "Twelve light-lab tests with different light sources and Reijmyre glass", "r11 fit"), fig("cel-sketches.jpg", "Early concept sketches No. 1 to No. 6", "r11 fit"), cap="Light-lab tests and early concept sketches. Celina grew out of No. 3.") +
     media("c2", fig("cel-proto.jpg", "Early test version of Celina with a blue inner glass", "r34"), fig("cel-proto-hang.jpg", "Test version hanging in the workshop to judge height and proportions", "r34"), cap="Test versions on the bench and hanging in the workshop."))
 
