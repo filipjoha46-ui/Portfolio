@@ -212,21 +212,20 @@ h += chapter("Introduction", "Getting people outside.", """
         <li><b>Flexible</b>One part, many pieces of furniture.</li>
       </ul>""",
     """
-    <div class="viewer reveal">
-      <script type="module" src="../assets/js/model-viewer.min.js"></script>
-      <div class="cfg-tabs" role="tablist" aria-label="Modulix configurations">
-        <button role="tab" aria-selected="true" data-src="modulix-sofa.glb" data-alt="/_blob/3c91870297e62bc04a1f9375acbfe499" data-cap="Two seat modules with upright modules as armrests and backrest, plus cushions.">Sofa</button>
-        <button role="tab" aria-selected="false" data-src="modulix-single.glb" data-alt="/_blob/92ab692d7303f423be727a82c0cbbb20" data-cap="One module as a side table or stool.">Side table</button>
-        <button role="tab" aria-selected="false" data-src="modulix-lounger.glb" data-alt="/_blob/804200318404638ceea0e552f4bab41f" data-cap="Two modules end to end with an upright backrest and a full-length cushion.">Sun lounger</button>
-        <button role="tab" aria-selected="false" data-src="modulix-stack.glb" data-alt="/_blob/233151c03e19b26ea81ecd89e0fcc364" data-cap="One stack for winter, with the cushions stored inside each module.">Winter storage</button>
+    <div class="viewer reveal" id="mod-config" data-src="../assets/models/modulix-single.glb" data-alt="/_blob/92ab692d7303f423be727a82c0cbbb20">
+      <div class="cfg-bar">
+        <div class="cfg-tabs" role="tablist" aria-label="Modulix configurations">
+          <button role="tab" aria-selected="true" data-layout="sofa">Sofa</button>
+          <button role="tab" aria-selected="false" data-layout="table">Side table</button>
+          <button role="tab" aria-selected="false" data-layout="lounger">Sun lounger</button>
+          <button role="tab" aria-selected="false" data-layout="stack">Winter storage</button>
+        </div>
+        <button class="cfg-dice" type="button" aria-label="Roll the dice for a random configuration"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.4"/><circle cx="15.5" cy="15.5" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="15.5" cy="8.5" r="1.4"/><circle cx="8.5" cy="15.5" r="1.4"/></svg><span>Roll the dice</span></button>
       </div>
-      <model-viewer id="mod-viewer" src="../assets/models/modulix-sofa.glb" alt="Interactive 3D model of Modulix configurations" camera-controls disable-zoom loading="lazy" interaction-prompt="auto" shadow-intensity="0.8" exposure="1.05" environment-image="neutral" camera-orbit="35deg 70deg auto" ar ar-modes="webxr scene-viewer quick-look" touch-action="pan-y"></model-viewer>
+      <div class="cfg-stage" aria-label="Interactive 3D model of Modulix configurations"><p class="cfg-msg">Loading 3D model…</p></div>
       <p class="cap"><span id="mod-cap">Two seat modules with upright modules as armrests and backrest, plus cushions.</span> Drag to rotate.</p>
-      <script>
-        (function(){var mv=document.getElementById('mod-viewer'),cap=document.getElementById('mod-cap'),bs=document.querySelectorAll('.cfg-tabs button'),cur=bs[0];
-        mv.addEventListener('error',function(){var a=cur.dataset.alt;if(a&&mv.getAttribute('src')!==a)mv.setAttribute('src',a);});
-        bs.forEach(function(b){b.addEventListener('click',function(){cur=b;bs.forEach(function(x){x.setAttribute('aria-selected',x===b)});mv.setAttribute('src','../assets/models/'+b.dataset.src);cap.textContent=b.dataset.cap;});});})();
-      </script>
+      <script type="importmap">{"imports":{"three":"../assets/js/three/three.module.min.js"}}</script>
+      <script type="module" src="../assets/js/modulix-viewer.js"></script>
     </div>
 """)
 h += chapter("Process", "From sketch to sheet metal.", """
@@ -242,7 +241,7 @@ h += chapter("Technical details", "Light, dry and simple to assemble.", """
         <li><b>Production</b>Each module is cut from flat aluminium sheet, perforated and bent twice into its rounded shape. An inner frame of bent tube in a two-part profile stiffens it.</li>
       </ul>""",
     media("", fig("mod-production.jpg", "Production steps: flat sheet, perforated, bent twice, with bent tube frames in a two-part profile; and the clamp joining two modules", "fit"), cap="Production from flat sheet to module, and the clamp that joins modules.") +
-    media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), fig("mod-process-3.jpg", "Perforated sheet parts and bent tube frames in the workshop", "r45")))
+    media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), fig("mod-cad.jpg", "CAD model of a single Modulix module with its perforated sheet and tube frame", "r45 fit")))
 h += bleed("mod-exhibit.jpg", "The Modulix scale model in front of the project poster at the exhibition", crop=True, pos="50% 70%")
 write("modulix.html", h + foot("oris.html", "ORIS"))
 

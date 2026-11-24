@@ -30,7 +30,12 @@ Job-search portfolio for Filip Johansson (M.Sc. Design & Product Development, Li
 - **Åbacka**: year 1, 2024. Outdoor furniture by Stångån, Linköping.
 
 ## 3D models and the Claude preview
-The Claude artifact preview can't serve `.glb` files and blocks `data:` URIs. Each config button therefore has `data-alt="/_blob/<id>"`, which points to a copy uploaded as an artifact asset. The page falls back to it only when the relative `.glb` fails to load. On GitHub Pages the relative `.glb` is used. If a model changes, re-upload it as an asset and update the `/_blob/` id in `tools/build_pages.py`.
+The Modulix Introduction has a three.js configurator (`assets/js/modulix-viewer.js`, three.js 0.160 vendored in `assets/js/three/`, loaded through an import map in the page). It loads `assets/models/modulix-single.glb` once (that file holds every mesh: module and cushions), builds all layouts in the browser and animates between them with a hop and a landing squash (instant when the visitor prefers reduced motion).
+- Tabs (`LAYOUTS`): Sofa (default), Side table, Sun lounger, Winter storage.
+- "Roll the dice" (`DICE`): two armchairs, sofa with side table, three-seater, lounger with side table, two loungers, armchair with footstool, bench with plant table, sofa with coffee table, chaise sofa. Props (cup, flower vase, plant, books) are drawn in code and vary per roll; they must sit on a top surface (table top y = H, armrest top y = W).
+- After changing a layout, render every layout and check it (modules on the ground or on another module, no overlaps, props on surfaces).
+
+The Claude artifact preview can't serve `.glb` files and blocks `data:` URIs. The viewer element therefore has `data-alt="/_blob/<id>"`, a copy of modulix-single.glb uploaded as an artifact asset, used only when the relative `.glb` fails. On GitHub Pages the relative `.glb` is used. If the model changes, re-upload it as an asset and update the `/_blob/` id in `tools/build_pages.py`.
 
 ## Workflow
 Make changes, regenerate the pages, check the result visually, then commit and push to `main`. GitHub Pages redeploys automatically.
