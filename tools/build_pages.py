@@ -198,14 +198,15 @@ write("celina.html", h + foot("modulix.html", "Modulix"))
 h = head("Modulix", "Modulix, modular outdoor furniture in perforated metal. Materials for Design, Linköping University 2025.", "card-modulix.jpg")
 h += cover("mod-hero-wide.jpg", "Modulix sofa module on a wooden deck in a garden", "40% 60%")
 h += intro("Materials for Design · 2025", "Modulix",
-           "One module, clamped together, becomes a chair, a sofa, a table or a sun lounger. Outdoor furniture that dries fast, never rusts and stacks away when summer ends.",
+           "A modular outdoor furniture system where a single aluminium module becomes a chair, sofa, table or sun lounger, and stacks away for the winter.",
            [("Year", "2025"), ("Context", "Materials for Design, Linköping University"),
             ("Theme", "Inconcrete brutalism")])
 h += chapter("Introduction", "Getting people outside.", """
-      <p>The brief was to develop a multi-material product for people in Vadstena under the theme <i>Inconcrete brutalism</i>. Vadstena has beautiful nature and an older population, and many find it hard to get out. The direction, <b>UT&amp;NJUT</b> (<i>get out and enjoy</i>), was about making the garden easier and more inviting to use.</p>
+      <p>The brief was to develop a multi-material product for a customer group in Vadstena under the theme <i>Inconcrete brutalism</i>. Background research led to the direction <b>UT&amp;NJUT</b> (<i>get out and enjoy</i>): making it easier and more inspiring for people to spend time in their gardens.</p>
+      <p>Much outdoor furniture is clumsy, needs constant care, and rusts or breaks in a Swedish climate. Modulix was designed to handle rain and changing weather without damage.</p>
       <p>The answer is one part that does everything. Modules are joined with easy-to-use clamps that make the construction stable yet quick to reconfigure, so the same module becomes a side table, a sofa or a sun lounger, and stacks away for compact winter storage.</p>
       <ul class="points">
-        <li><b>Easy to store and use</b>No heavy lifting, no cushions to carry in.</li>
+        <li><b>Easy to store and use</b>Cushions store inside the stacked modules over winter.</li>
         <li><b>Dries quickly</b>Perforations let water drain and air flow.</li>
         <li><b>Maintenance-free</b>Durable materials that don't rust.</li>
         <li><b>Flexible</b>One part, many pieces of furniture.</li>
@@ -229,16 +230,19 @@ h += chapter("Introduction", "Getting people outside.", """
     </div>
 """)
 h += chapter("Process", "From sketch to sheet metal.", """
-      <p>The process started wide with brutalist, mesh-like forms, then broke them down into a system of simple blocks, and finally landed on a single rounded module that can be combined into every piece of furniture.</p>""",
-    media("c3", fig("mod-process-1.jpg", "Cutting sheet for the scale model", "r34"), fig("mod-process-2.jpg", "Assembling the scale model", "r34"), fig("mod-process-3.jpg", "Perforated parts in the workshop", "r34")))
+      <p>The process started wide with brutalist, mesh-like forms, moved on to repeating forms, and finally landed on a module system where one part can become many: a single rounded module that combines into every piece of furniture.</p>""",
+    media("", fig("mod-sketches.jpg", "Sketches moving from brutalist mesh forms through repeating forms to a system of modules", "r169 fit"), cap="From brutalist forms to repeating forms to a module system.") +
+    media("c2", fig("mod-process-1.jpg", "Cutting perforated sheet for the scale model", "r34"), fig("mod-model.jpg", "The finished Modulix scale model as a sofa", "r34"), cap="Building the scale model."))
 h += chapter("Technical details", "Light, dry and simple to assemble.", """
       <ul class="points">
         <li><b>Aluminium module</b>Perforated aluminium sheet, about 8.5 kg per module, light enough to carry and stack.</li>
         <li><b>Clamp and feet</b>Powder-coated steel with EPDM rubber, protecting both the module and the deck.</li>
         <li><b>Quick-dry cushions</b>Polyester mesh with quick-dry foam and a cover in solution-dyed polyester.</li>
         <li><b>Simple mounting</b>Modules are bolted together through the side walls with one clamp.</li>
+        <li><b>Production</b>Each module is cut from flat aluminium sheet, perforated and bent twice into its rounded shape. An inner frame of bent tube in a two-part profile stiffens it.</li>
       </ul>""",
-    media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), ph("Drawings", "Add your process sketches and technical drawings here.", "r45")))
+    media("", fig("mod-production.jpg", "Production steps: flat sheet, perforated, bent twice, with bent tube frames in a two-part profile; and the clamp joining two modules", "fit"), cap="Production from flat sheet to module, and the clamp that joins modules.") +
+    media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), fig("mod-process-3.jpg", "Perforated sheet parts and bent tube frames in the workshop", "r45")))
 h += bleed("mod-exhibit.jpg", "The Modulix scale model in front of the project poster at the exhibition", crop=True, pos="50% 70%")
 write("modulix.html", h + foot("oris.html", "ORIS"))
 
