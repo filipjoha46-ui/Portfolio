@@ -151,7 +151,7 @@ def write(name, html):
 h = head("Celina", "Celina, a floating ceiling lamp for Reijmyre Glasbruk. Bachelor's thesis, Linköping University 2026.", "card-celina.jpg")
 h += cover("cel-header-wide.jpg", "Celina pendant with blue inner glass above a set dining table in a bright room", "50% 30%")
 h += intro("Reijmyre Glasbruk · Bachelor's thesis · 2026", "Celina",
-           "A pendant lamp for Reijmyre Glasbruk in which a coloured inner glass is suspended within a clear <i>Lina</i> vase, bringing the glassworks' signature colours into focus.",
+           "A ceiling lamp where glass meets metal to create a floating design, built to celebrate the colours Reijmyre Glasbruk is known for.",
            [("Year", "2026"), ("Client", "Reijmyre Glasbruk"),
             ("Capabilities", "Industrial design, mechanical design, prototyping, lighting")])
 h += video_band("celina-exploded.mp4", "celina-exploded.jpg", "Animated exploded view of Celina and its components")
