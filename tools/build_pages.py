@@ -173,14 +173,17 @@ h += chapter("Process", "From light lab to floating glass.", """
 h += chapter("Production &amp; assembly", "Optimised for production, easy to assemble.", """
       <p>Celina uses glass Reijmyre already blows, so no new moulds are needed. Everything else is standard or simple to make: a GX53 LED puck, three CNC-turned aluminium parts modelled in Fusion 360, and one bent sheet-metal bracket. The construction tolerates the natural variation of hand-blown glass.</p>
       <p>Assembly is just as simple. The glass is clamped mechanically between the top cap and the lower lock ring, and the inner vase hangs from three 1 mm wires tensioned in the lock ring, which adds to the floating effect. A 300 mm gravity pipe keeps the lamp hanging straight, the power cable runs hidden through the pendant tube, and the bracket with integrated strain relief lets the ceiling canopy stay small.</p>""" + ph("CAD / section view", "Add a Fusion 360 section view showing the parts.", "txt"),
-    media("c2", fig("cel-studio.jpg", "Studio render of Celina showing the inner vase hanging on thin wires", "r34 fit"), fig("cel-lathe.jpg", "CNC lathe turning the aluminium top cap", "r34")) +
-    media("c2", fig("cel-turned.jpg", "Turned aluminium top cap on its technical drawing", "r34"), fig("cel-pipe.jpg", "The gravity pipe with its turned aluminium parts", "r34")) +
-    media("c2", fig("cel-wiring.jpg", "Fitting the bracket and GX53 holder into the top cap", "r34"), fig("cel-assembly.jpg", "Assembling the glass into the finished lamp", "r34"), cap="From turned parts to an assembled lamp."))
+    media("", fig("cel-exploded.jpg", "Exploded view of Celina: wires, coloured inner glass, lock ring, outer glass, diffuser, GX53 puck, bracket, top cap and gravity pipe", "fit"), cap="All components, from the 1 mm wires and inner glass to the top cap and gravity pipe.") +
+    media("c2", fig("cel-lathe.jpg", "CNC lathe turning the aluminium top cap", "r34"), fig("cel-turned.jpg", "Turned aluminium top cap on its technical drawing", "r34")) +
+    media("c2", fig("cel-pipe.jpg", "The gravity pipe mounted in the turned top cap", "r34"), fig("cel-wiring.jpg", "Fitting the bracket and GX53 holder into the top cap", "r34"), cap="CNC-turned aluminium parts, machined from technical drawings.") +
+    media("c2", fig("cel-gx53.jpg", "Standard GX53 lamp holder", "r11 fit"), fig("cel-bracket.jpg", "Bent sheet-metal bracket with strain relief mounted on the GX53 holder", "r11"), cap="A standard GX53 holder, fixed to the pendant tube by a bent sheet-metal bracket with built-in strain relief.") +
+    media("c2", fig("cel-assembly.jpg", "Assembling the glass into the finished lamp", "r34"), fig("cel-studio.jpg", "Studio render of Celina showing the inner vase hanging on thin wires", "r34 fit"), cap="Final assembly, and the finished design."))
 
 h += chapter("Light", "Soft ambience and useful light from one lamp.", """
       <p>The top of the inner vase is cut off so it directs an even beam downwards, and a fabric diffuser in the lock ring spreads the light and prevents glare. Most of the light falls through the inner vase onto the table, while the ribbed outer glass glows softly around it.</p>
       <div class="facts-row"><div>GX53<small>LED puck</small></div><div>2700 K<small>Colour temperature</small></div><div>500 lm<small>Luminous flux</small></div><div>300 mm<small>Gravity pipe</small></div></div>""",
-    media("c2", fig("cel-lightpath.jpg", "Diagram of how light leaves Celina", "r11 fit"), fig("cel-diffuser.jpg", "How the fabric diffuser scatters light", "r11 fit")))
+    media("c2", fig("cel-lit.jpg", "Celina lit, with the blue inner glass glowing inside the ribbed outer glass", "r34"), fig("cel-lightpath.jpg", "Diagram of how light leaves Celina", "r34 fit")) +
+    media("", fig("cel-diffuser.jpg", "How the fabric diffuser scatters light", "fit")))
 
 h += chapter("Vernissage", "Shown at the final vernissage.", """
       <p>The finished prototype was presented at Linköping University in a staged dining scene, together with Reijmyre's glass. Celina gives Reijmyre a way to sell pieces they already make as a premium light.</p>""",
