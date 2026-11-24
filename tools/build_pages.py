@@ -151,13 +151,13 @@ def write(name, html):
 h = head("Celina", "Celina, a floating ceiling lamp for Reijmyre Glasbruk. Bachelor's thesis, Linköping University 2026.", "card-celina.jpg")
 h += cover("cel-header-wide.jpg", "Celina pendant with blue inner glass above a set dining table in a bright room", "50% 30%")
 h += intro("Reijmyre Glasbruk · Bachelor's thesis · 2026", "Celina",
-           "A ceiling lamp where a coloured glass seems to float inside a larger one, built to celebrate the colours Reijmyre Glasbruk is known for.",
+           "A pendant lamp for Reijmyre Glasbruk in which a coloured inner glass is suspended within a clear <i>Lina</i> vase, bringing the glassworks' signature colours into focus.",
            [("Year", "2026"), ("Client", "Reijmyre Glasbruk"),
             ("Capabilities", "Industrial design, mechanical design, prototyping, lighting")])
 h += video_band("celina-exploded.mp4", "celina-exploded.jpg", "Animated exploded view of Celina and its components")
 
 h += chapter("Introduction", "Existing glass, new light.", """
-      <p>A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810. The brief was to turn their existing <i>Lina</i> glass collection into reproducible lighting built on standard components. Celina is the result: a ceiling lamp where a coloured glass seems to float inside a larger clear one.</p>""",
+      <p>A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810. The brief was to turn their existing <i>Lina</i> glass collection into reproducible lighting built on standard components. Celina pairs two pieces from the collection, using light to bring out the colour of the glass rather than depend on it.</p>""",
     media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45")))
 
 h += chapter("Three principles of light", "Built on ambient luminescence.", """
