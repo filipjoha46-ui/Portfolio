@@ -209,23 +209,7 @@ body.dark .contact-links a:hover{border-color:var(--ink)}
 .work-head span{color:var(--muted);font-size:14px}
 .more{border-bottom:1px solid var(--line);padding-bottom:2px;font-size:17px}.more:hover{border-color:var(--ink)}
 .viewer{margin-top:var(--gap)}
-.cfg-stage{position:relative;width:100%;height:min(70vh,640px);background:var(--tile);overflow:hidden}
-.cfg-stage canvas{display:block;width:100%!important;height:100%!important;cursor:grab}
-.cfg-stage canvas:active{cursor:grabbing}
-.cfg-msg{position:absolute;inset:0;display:grid;place-items:center;margin:0;font-size:13px;color:var(--muted)}
-#mod-config:not(.loading):not(.failed) .cfg-msg{display:none}
-#mod-config.failed .cfg-msg{font-size:0}
-#mod-config.failed .cfg-msg::after{content:"The 3D model could not be loaded.";font-size:13px}
-.cfg-bar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;margin:0 0 14px}
-.cfg-bar .cfg-tabs{margin:0}
-.cfg-dice{margin-left:auto;display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13px;letter-spacing:.01em;padding:7px 16px 7px 12px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--bg);cursor:pointer;transition:opacity .2s}
-.cfg-dice:hover{opacity:.85}
-.cfg-dice svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}
-.cfg-dice svg circle{fill:currentColor;stroke:none}
-.cfg-dice.rolling svg{animation:dice-roll .7s cubic-bezier(.3,1.5,.5,1)}
-@keyframes dice-roll{0%{transform:rotate(0) scale(1)}35%{transform:rotate(200deg) scale(1.25) translateY(-2px)}100%{transform:rotate(360deg) scale(1)}}
-@media (max-width:560px){.cfg-dice{margin-left:0}.cfg-stage{height:min(58vh,440px)}}
-@media (prefers-reduced-motion:reduce){.cfg-dice.rolling svg{animation:none}}
+.viewer model-viewer{width:100%;height:min(70vh,640px);background:var(--tile);--poster-color:transparent;display:block}
 .cfg-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
 .cfg-tabs button{font:inherit;font-size:13px;letter-spacing:.01em;padding:8px 16px;border:1px solid var(--line,rgba(0,0,0,.15));border-radius:999px;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
 .cfg-tabs button:hover{border-color:var(--ink)}
