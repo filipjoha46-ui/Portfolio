@@ -299,9 +299,9 @@ h += statement("Introduction", 'Three products, one design language: <span class
           ("S2", "Home speaker. Shares the horizontal grooves with S1.")]))
 h += """  <section class="mat wrap">
     <p class="label">Materials</p>
-    <h2 class="mat-words reveal"><span>Metal</span> <em>against</em> <span class="mute">textile.</span></h2>
-""" + cols([("Cool and exact", "Polished metal shells and precise horizontal grooves frame the sound and give a premium, precise feel."),
-          ("Soft and tactile", "Mesh textile on the headband and ear cushions adds warmth where the products meet the body.")]) + """  </section>
+    <h2 class="mat-words reveal">Cool metal, <span class="mute">soft textile.</span></h2>
+    <p class="mat-body reveal">Metal frames the sound and gives a precise feel. Mesh textile adds warmth where the products meet the body.</p>
+  </section>
 """
 h += statement("Energy", 'Headphones that charge <span class="mute">from the light around them.</span>', """
       <p class="st-body">A thin, flexible printed solar cell from Epishine, a Linköping company, follows the curve of the S3 headband and tops up the battery whenever the headphones are worn or left in a lit room. The cell becomes part of the look instead of being hidden.</p>

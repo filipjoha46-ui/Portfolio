@@ -177,10 +177,9 @@ p+p{margin-top:1em}
 .good{color:#7CCB8F}
 .mat{padding-top:clamp(64px,9vw,136px)}
 .mat > .label{padding-top:22px;border-top:1px solid var(--line);width:100%;max-width:none}
-.mat-words{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.25em;font-size:clamp(64px,12.5vw,190px);font-weight:500;letter-spacing:-.055em;line-height:.9;margin:clamp(28px,4vw,56px) 0 clamp(40px,5vw,72px);max-width:none}
-.mat-words em{font-style:normal;font-weight:400;font-size:.22em;letter-spacing:-.01em;color:var(--muted);align-self:center}
+.mat-words{font-size:clamp(48px,8vw,128px);font-weight:500;letter-spacing:-.05em;line-height:.95;margin:clamp(28px,4vw,56px) 0 0;max-width:none}
 .mat-words .mute{color:var(--muted)}
-@media (max-width:560px){.mat-words{font-size:24vw;flex-direction:column;align-items:flex-start;row-gap:.06em}.mat-words em{align-self:flex-start;font-size:.2em}}
+.mat-body{font-size:18px;color:var(--muted);max-width:44ch;margin-top:clamp(24px,3vw,40px)}
 .calc-band + .chapter{padding-top:clamp(56px,8vw,112px)}
 @media (max-width:720px){.calc-hero{grid-template-columns:1fr}.calc-facts{grid-template-columns:1fr;gap:28px}}
 @media (prefers-reduced-motion:reduce){.calc-track i{transform:none;transition:none}}
