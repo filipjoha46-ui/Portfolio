@@ -216,7 +216,7 @@ h += chapter("Production &amp; assembly", "Optimised for production, easy to ass
         ("Light source", "GX53 LED puck, fully hidden"),
         ("Suspension", "Inner vase on three 1 mm wires, tensioned in the lock ring"),
         ("Hanging", "300 mm gravity pipe keeps the lamp straight"),
-        ("Ceiling", "Bent bracket with strain relief keeps the canopy small")]) + ph("CAD / section view", "Add a Fusion 360 section view showing the parts.", "txt"),
+        ("Ceiling", "Bent bracket with strain relief keeps the canopy small")]),
     media("", fig("cel-exploded.jpg", "Exploded view of Celina with every part named: metal wires, Lina vase, lock ring, outer Lina vase, diffuser, GX53, mounting bracket, top cap and gravity pipe", "fit")) +
     media("c2", fig("cel-pipe.jpg", "The gravity pipe mounted in the CNC-turned aluminium top cap", "r34"), fig("cel-bracket.jpg", "Bent sheet-metal bracket with strain relief mounted on the GX53 holder", "r34"), cap="The turned top cap with its gravity pipe, and the bent sheet-metal bracket with built-in strain relief.") +
     media("c2", fig("cel-wiring.jpg", "Fitting the bracket and GX53 holder into the top cap", "r34"), fig("cel-lit.jpg", "The assembled lamp lit, with the blue inner glass glowing inside the ribbed outer glass", "r34"), cap="Fitting the light source into the top cap, and the assembled lamp lit."))
