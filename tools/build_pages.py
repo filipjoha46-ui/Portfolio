@@ -304,30 +304,23 @@ h += statement("Energy", 'Headphones that charge <span class="mute">from the lig
       <p class="credit-logo"><span>Solar cell technology</span><img src="../assets/img/epishine-logo.png" alt="Epishine" width="134" height="29"></p>""",
     media("c2", fig("oris-solar.jpg", "Close-up of the S3 headband with the integrated solar cell", "r45"), fig("oris-epishine.jpg", "A flexible Epishine solar cell bent between two fingers", "r45"), cap="Right: Epishine's flexible solar cell. Photo: Epishine."))
 
-h += chapter("Calculation", "What the light is worth.", """
-      <p>A theoretical estimate of what the headband cell could add on an ordinary day, using typical values for Epishine's printed organic solar cells. Not measured on a prototype.</p>
-      <div class="facts-row"><div>22 %<small>Of daily energy from light</small></div><div>+28 %<small>More days between charges</small></div><div>&minus;22 %<small>Battery size, same charging</small></div><div>55 g<small>CO&#8322;e saved per headphone</small></div></div>""",
-    """    <div class="bars reveal" role="img" aria-label="Daily energy: 150 mWh used, 33 mWh harvested from light. Battery: 2.5 Wh without the cell, 1.95 Wh with it.">
-      <p class="bars-title">A typical day</p>
-      <div class="bar-row"><span class="bar-label">Used</span><div class="bar-track"><i class="use" style="width:100%"></i></div><span class="bar-val">150 mWh</span></div>
-      <div class="bar-row"><span class="bar-label">Harvested from light</span><div class="bar-track"><i class="in" style="width:6.1%"></i><i class="out" style="width:15.9%"></i></div><span class="bar-val">33 mWh</span></div>
-      <p class="bar-key"><span class="kitem"><span class="k in"></span>Indoors, 11 h at 500 lux: 9 mWh</span><span class="kitem"><span class="k out"></span>Outdoors, 1 h overcast: 24 mWh</span></p>
-      <p class="bars-title">Battery for the same charging interval</p>
-      <div class="bar-row"><span class="bar-label">Without the cell</span><div class="bar-track"><i class="bat" style="width:100%"></i></div><span class="bar-val">2.5 Wh</span></div>
-      <div class="bar-row"><span class="bar-label">With the cell</span><div class="bar-track"><i class="bat" style="width:78%"></i><i class="saved" style="width:22%"></i></div><span class="bar-val">1.95 Wh</span></div>
+# dark full-width band: one big number, one bar, three figures
+h += """  <section class="calc-band" aria-label="What the light is worth">
+    <div class="wrap">
+      <p class="label">What the light is worth</p>
+      <div class="calc-hero reveal">
+        <div class="facts-row calc-big"><div>22 %</div></div>
+        <p class="calc-lead">of the headphones' daily energy could come from the light around them.</p>
+      </div>
+      <div class="calc-bar reveal" role="img" aria-label="22 percent of daily energy from light, 78 percent from the charger">
+        <div class="calc-track"><i></i></div>
+        <div class="calc-keys"><span class="k-light">From light</span><span class="k-grid">From the charger</span></div>
+      </div>
+      <div class="facts-row calc-facts reveal"><div>+28 %<small>More days between charges</small></div><div>&minus;22 %<small>Smaller battery, same charging</small></div><div>55 g<small>Less CO&#8322;e per headphone</small></div></div>
+      <p class="calc-note">Concept estimate based on typical values for Epishine's indoor solar cells.</p>
     </div>
-    <div class="chapter-text reveal calc-notes">
-      <p class="label">Assumptions</p>
-      <div>""" + specs([
-        ("Solar cell", "About 50 cm&sup2; of printed organic cell along the S3 headband"),
-        ("Indoor light", "500 lux office light, about 10 % conversion: 0.8 mW from the whole cell"),
-        ("Outdoor light", "10,000 lux on an overcast day, about 5 % conversion: 24 mW"),
-        ("Use", "Bluetooth with noise cancelling at about 50 mW, worn 3 h a day"),
-        ("Battery", "2.5 Wh, 50 h of play, at 200 Wh/kg: 12.5 g"),
-        ("Footprint", "About 100 kg CO&#8322;e per kWh of lithium-ion battery produced")]) + """
-      <p class="calc-note">Result: 33 of 150 mWh a day comes from light. The same battery lasts about 21 days instead of 17 between charges, or a 1.95 Wh battery keeps today's interval. That is 0.55 Wh and about 2.7 g less battery, roughly 2 g net with the cell film, and about 55 g CO&#8322;e per headphone: around 5.5 tonnes per 100,000 units. The cell's own footprint is not included. A sunny day would harvest far more.</p></div>
-    </div>
-""")
+  </section>
+"""
 h += chapter("Process", "Sketch, model, refine.", ph("Sketches & CAD", "Add early form sketches and CAD views of the headphones and speakers.", "txt"))
 h += bleed("oris-family.jpg", "The ORIS family: S1, S3 and S2 side by side")
 write("oris.html", h + foot("abacka.html", "Åbacka"))
