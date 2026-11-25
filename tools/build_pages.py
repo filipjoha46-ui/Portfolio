@@ -244,7 +244,7 @@ h += intro("Materials for Design · 2025", "Modulix",
             ("Theme", "Inconcrete brutalism"), ("Direction", "UT&amp;NJUT, get out and enjoy")])
 h += statement("Introduction", 'One aluminium module, clamped together, <span class="mute">becomes a side table, a sofa or a sun lounger, and stacks away when summer ends.</span>', """
       <p class="st-body">Outdoor furniture for a customer group in Vadstena that handles rain and changing weather, dries fast and never needs carrying in.</p>
-      <div class="facts-row"><div>1<small>Module</small></div><div>4<small>Configurations</small></div><div>8.5 kg<small>Per module</small></div></div>""",
+      <div class="facts-row"><div>1<small>Module</small></div><div class="inf">&infin;<small>Configurations</small></div><div>8.5 kg<small>Per module</small></div></div>""",
     """
     <div class="viewer reveal">
       <script type="module" src="../assets/js/model-viewer.min.js"></script>

@@ -32,6 +32,21 @@
       requestAnimationFrame(step);
     };
   });
+  // "Unlimited" figure: counts up fast, accelerating, then lands on the infinity sign
+  document.querySelectorAll('.facts-row > .inf').forEach(function(box){
+    var t=box.firstChild; if(!t||t.nodeType!==3) return;
+    var num=document.createElement('span'); num.className='count'; num.textContent='\u221E';
+    box.replaceChild(num,t);
+    num.style.minWidth=Math.max(num.getBoundingClientRect().width,0)+'px'; num.style.textAlign='left';
+    num.textContent='0';
+    box._count=function(){
+      var t0=null,dur=1500;
+      function step(ts){if(t0===null)t0=ts;var u=(ts-t0)/dur;
+        if(u>=1){num.textContent='\u221E';return;}
+        num.textContent=String(Math.floor(Math.pow(u,3)*999)); requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    };
+  });
   var cio=new IntersectionObserver(function(entries){
     entries.forEach(function(en){if(!en.isIntersecting) return; cio.unobserve(en.target);
       en.target.querySelectorAll('.facts-row > div').forEach(function(b){if(b._count) b._count();});});
