@@ -167,6 +167,14 @@ p+p{margin-top:1em}
 .swatch.cell{background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.22) 46px 48px),repeating-linear-gradient(0deg,transparent 0 22px,rgba(255,255,255,.08) 22px 23px),linear-gradient(135deg,#1d2a44,#2f3f63 55%,#1a2338)}
 @media (max-width:720px){.fp-compare,.fp-cards{grid-template-columns:1fr}.fp-props dl{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.fp-row i{transform:none;transition:none}}
+.fp-band{background:#141414;color:#F2F1ED;--ink:#F2F1ED;--muted:#9B9993;--line:#2C2B29;--bg:#141414;--tile:#1C1B1A;padding-bottom:clamp(56px,8vw,112px)}
+.fp-band .chapter{padding-top:clamp(24px,3vw,40px)}
+.fp-band + .bleed{margin-top:0}
+.calc-band:has(+ .fp-band){padding-bottom:clamp(24px,3vw,40px)}
+.fp-band .s0{background:#F2F1ED}
+.fp-band .fp-col.std .fp-row i{background:#55534E}
+.fp-band .fp-col.oris .fp-total b{color:#7CCB8F}
+.good{color:#7CCB8F}
 .calc-band + .chapter{padding-top:clamp(56px,8vw,112px)}
 @media (max-width:720px){.calc-hero{grid-template-columns:1fr}.calc-facts{grid-template-columns:1fr;gap:28px}}
 @media (prefers-reduced-motion:reduce){.calc-track i{transform:none;transition:none}}
