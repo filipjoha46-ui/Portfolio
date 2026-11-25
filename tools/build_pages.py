@@ -351,14 +351,14 @@ h += statement("Introduction", 'Outdoor furniture for one place: <span class="mu
       <p class="st-body">The work started on site, studying how people move along the path, where they stop and how the slope meets the water.</p>""",
     media("c2", fig("aba-site-1.jpg", "The path along Stångån", "r45"), fig("aba-site-2.jpg", "People walking along the riverbank", "r45")))
 h += quote("From generation to generation.")
-h += statement("Concept", 'Repetition as a method: <span class="mute">simple discs and slices, cut and stacked, to find how the riverbank could become a place to sit.</span>', """
-      <p class="st-body">Quick models in cardboard and foam explored rhythm, curves and height before any form was fixed.</p>""",
+h += statement("Process", 'Repetition as a method: <span class="mute">simple discs and slices, cut and stacked, to find how the riverbank could become a place to sit.</span>', """
+      <p class="st-body">Quick models in cardboard and foam explored rhythm, curves and height. The final model was built the same way as the full-scale furniture: from stacked, individually cut sections.</p>""",
     media("", fig("aba-discs.jpg", "Cardboard and foam discs glued into flowing, wave-like forms on the workshop table", "fit")) +
-    media("c2", fig("aba-proc-3.jpg", "Cutting sections for the model", "r34"), fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), cap="From loose experiments to cut sections."))
-h += chapter("Model", "Built slice by slice.", """
-      <p>The loungers were built from stacked, individually cut sections, the same logic as the full-scale slats.</p>""",
-    media("c2", fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34")))
-h += statement("Result", 'A place where people meet, <span class="mute">facing both the water and the path.</span>', """
-      <p class="st-body">The tree-like pergola connects the path with the meeting place and gives shade and a sheltered feeling.</p>""",
+    media("c2", fig("aba-proc-3.jpg", "Cutting sections for the model", "r34"), fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), cap="From loose experiments to cut sections.") +
+    media("c2", fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34"), cap="Assembling the base, and the finished model."))
+h += statement("Meeting place", 'Seats that face both ways, <span class="mute">so different groups can share one piece of furniture.</span>', """
+      <p class="st-body">Some sit facing the path and the people walking by, others face the water. The deck reaches all the way to the river, so there is room to sit right at the edge.</p>""",
+    media("", svgfig("abacka-meeting.svg", "r32 fit"), cap="Top view of the meeting place."))
+h += statement("Result", 'A tree-like pergola <span class="mute">connects the path with the meeting place and gives shade and shelter.</span>', "",
              media("", fig("aba-sheet.jpg", "Åbacka presentation sheet", "fit paper")))
 write("abacka.html", h + foot("celina.html", "Celina"))
