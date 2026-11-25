@@ -174,7 +174,8 @@ h += chapter("Process", "From light lab to floating glass.", """
       <p>A moodboard then set the expression the lamp should carry: elegant, ambient, classic, Scandinavian and inviting. The insights and the moodboard fed straight into sketching. Of the early concepts, No. 3 became Celina: a small coloured vase suspended inside a large clear <i>Lina</i> vase. Physical test versions were used to judge proportions, hanging height and the glow of the inner glass before committing to the final construction.</p>""",
     media("", fig("cel-moodboard.jpg", "Moodboard with five images labelled elegant, ambient, classic, Scandinavian and inviting", "r169"), cap="Moodboard defining the expression of the lamp.") +
     media("c2", fig("cel-lab-grid.jpg", "Twelve light-lab tests with different light sources and Reijmyre glass", "r11 fit"), fig("cel-sketches.jpg", "Early concept sketches No. 1 to No. 6", "r11 fit"), cap="Light-lab tests and early concept sketches. Celina grew out of No. 3.") +
-    media("c2", fig("cel-proto.jpg", "Early test version of Celina with a blue inner glass", "r34"), fig("cel-proto-hang.jpg", "Test version hanging in the workshop to judge height and proportions", "r34"), cap="Test versions on the bench and hanging in the workshop."))
+    media("c2", fig("cel-proto.jpg", "Early test version of Celina with a blue inner glass", "r34"), fig("cel-proto-hang.jpg", "Test version hanging in the workshop to judge height and proportions", "r34"), cap="Test versions on the bench and hanging in the workshop.") +
+    media("c2", fig("cel-pink-glass.jpg", "Pink Lina glass with a water-jet cut opening for the cable and socket", "r34"), fig("cel-pink-test.jpg", "An early test version in pink glass hanging from its cable", "r34"), cap="An early test in pink glass, with a water-jet cut opening."))
 
 h += chapter("Production &amp; assembly", "Optimised for production, easy to assemble.", """
       <p>Celina uses glass Reijmyre already blows, so no new moulds are needed. Everything else is standard or simple to make: a GX53 LED puck, three CNC-turned aluminium parts modelled in Fusion 360, and one bent sheet-metal bracket. The construction tolerates the natural variation of hand-blown glass.</p>
@@ -234,6 +235,7 @@ h += chapter("Introduction", "Getting people outside.", """
 h += chapter("Process", "From sketch to sheet metal.", """
       <p>The process started wide with brutalist, mesh-like forms, moved on to repeating forms, and finally landed on a module system where one part can become many: a single rounded module that combines into every piece of furniture.</p>""",
     media("", fig("mod-sketches.jpg", "Sketches moving from brutalist mesh forms through repeating forms to a system of modules", "r169 fit"), cap="From brutalist forms to repeating forms to a module system.") +
+    media("c2", fig("mod-foam-1.jpg", "Blue foam model of modules combined into a chair", "r11"), fig("mod-foam-2.jpg", "Blue foam blocks testing how modules combine", "r11"), cap="Foam models testing how the modules combine.") +
     media("c2", fig("mod-process-1.jpg", "Cutting perforated sheet for the scale model", "r34"), fig("mod-model.jpg", "The finished Modulix scale model as a sofa", "r34"), cap="Building the scale model."))
 h += chapter("Technical details", "Light, dry and simple to assemble.", """
       <ul class="points">
