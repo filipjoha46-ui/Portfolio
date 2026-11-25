@@ -231,7 +231,7 @@ h += chapter("Vernissage", "Shown at the final vernissage.", """
       <p>Presented at Linköping University in a staged dining scene, together with Reijmyre's glass.</p>""",
     media("c2", fig("cel-vernissage-1.jpg", "Celina at the vernissage", "r34"), fig("cel-vernissage-2.jpg", "Celina lit above the dinner table at the vernissage", "r34")))
 h += quote('Glass Reijmyre already makes, <span class="mute">turned into a premium light.</span>')
-h += bleed("cel-closing.jpg", "Celina hanging by a large window over the sea in a timber room", crop=True, pos="50% 70%")
+h += bleed("cel-closing.jpg", "Celina hanging by a large window over the sea in a timber room", crop=True, pos="50% 50%")
 write("celina.html", h + foot("modulix.html", "Modulix"))
 
 # ======================================================== MODULIX
