@@ -280,7 +280,7 @@ h += chapter("Technical details", "Light, dry and simple to assemble.", specs([
     media("", fig("mod-production.jpg", "Production steps: flat sheet, perforated, bent twice, with bent tube frames in a two-part profile; and the clamp joining two modules", "fit"), cap="Production from flat sheet to module, and the clamp that joins modules.") +
     media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), fig("mod-cad.jpg", "CAD model of a single Modulix module with its perforated sheet and tube frame", "r45 fit")))
 h += quote('Create, rebuild and adapt. <span class="mute">Modulix makes it possible.</span>')
-h += bleed("mod-exhibit.jpg", "The Modulix scale model in front of the project poster at the exhibition", crop=True, pos="50% 70%")
+h += bleed("mod-exhibit.jpg", "The Modulix scale model in front of the project poster at the exhibition", crop=True, pos="50% 55%")
 write("modulix.html", h + foot("oris.html", "ORIS"))
 
 # ======================================================== ORIS
