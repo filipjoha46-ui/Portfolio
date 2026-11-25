@@ -236,7 +236,6 @@ write("celina.html", h + foot("modulix.html", "Modulix"))
 
 # ======================================================== MODULIX
 h = head("Modulix", "Modulix, modular outdoor furniture in perforated metal. Materials for Design, Linköping University 2025.", "card-modulix.jpg")
-h += cover("mod-hero-wide.jpg", "Modulix sofa module on a wooden deck in a garden", "40% 60%")
 h += intro("Materials for Design · 2025", "Modulix",
            "Modular outdoor furniture in perforated aluminium, designed to get people out into their gardens.",
            [("Year", "2025"), ("Context", "Materials for Design, Linköping University"),

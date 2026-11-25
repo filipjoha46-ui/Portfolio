@@ -89,6 +89,7 @@ p+p{margin-top:1em}
 .case-cover{width:100%;height:calc(100vh - 64px);min-height:420px;max-height:1000px;overflow:hidden;background:var(--tile)}
 .case-cover img{width:100%;height:100%;object-fit:cover}
 .case-intro{padding-top:clamp(48px,7vw,104px);padding-bottom:clamp(40px,6vw,88px)}
+main > .case-intro:first-child{padding-top:clamp(120px,14vw,200px)}
 .case-intro .eyebrow{margin-bottom:16px}
 .case-intro .lead{margin-top:20px;max-width:30ch}
 .case-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,80px);align-items:end}
