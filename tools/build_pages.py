@@ -143,6 +143,23 @@ def statement(label, text, body="", media=""):
 """
 
 
+def cols(items, numbered=False, on=None):
+    """A full-width row of short text columns: process steps, principles or products.
+    items: (title, text) pairs. numbered adds 01, 02... on: index of the item to highlight (others are dimmed)."""
+    out = []
+    for i, (t, x) in enumerate(items):
+        cls = "" if on is None else (" on" if i == on else " dim")
+        n = f'<span class="n">{i + 1:02d}</span>' if numbered else ""
+        out.append(f'<div class="col{cls}">{n}<h3>{t}</h3><p>{x}</p></div>')
+    return f'    <div class="cols reveal" style="--n:{len(items)}">{"".join(out)}</div>\n'
+
+
+def specs(rows):
+    """A two-column list of facts (label, value) instead of a paragraph."""
+    r = "".join(f"<dt>{a}</dt><dd>{b}</dd>" for a, b in rows)
+    return f'<dl class="specs">{r}</dl>'
+
+
 def media(cols, *items, cap=None):
     c = f'<p class="cap">{cap}</p>' if cap else ""
     return f'    <div class="media {cols} reveal">{"".join(items)}</div>{c}\n'
@@ -173,37 +190,46 @@ h += intro("Reijmyre Glasbruk · Bachelor's thesis · 2026", "Celina",
             ("Capabilities", "Industrial design, mechanical design, prototyping, lighting")])
 h += video_band("celina-exploded.mp4", "celina-exploded.jpg", "Animated exploded view of Celina and its components")
 
-h += chapter("Introduction", "Existing glass, new light.", """
-      <p>A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810. The brief was to turn their existing <i>Lina</i> glass collection into reproducible lighting built on standard components. Celina pairs two pieces from the collection, using light to bring out the colour of the glass rather than depend on it.</p>""",
+h += statement("Introduction", 'Existing glass, new light. <span class="mute">Two pieces from Reijmyre\'s <i>Lina</i> collection, one inside the other, turned into a ceiling lamp.</span>', """
+      <p class="st-body">A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810: reproducible lighting from glass already in production, built on standard components.</p>""",
     media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45")))
-
 h += chapter("Three principles of light", "Built on ambient luminescence.", """
-      <p>The project is based on lighting designer Richard Kelly's three principles of light: ambient luminescence, focal glow and play of brilliants. Celina is built on the first, a soft, shadowless light that fills the room.</p>""",
+      <p>Lighting designer Richard Kelly describes three kinds of light. Celina is built on the first.</p>""",
+    cols([("Ambient luminescence", "Soft, shadowless light that fills the room. The principle behind Celina."),
+          ("Focal glow", "Directed light that draws the eye to one place."),
+          ("Play of brilliants", "Sparkle and reflections that bring a space to life.")], on=0) +
     media("", fig("cel-principles.jpg", "Diagram of Richard Kelly's three principles of light in a living room", "r32 fit")))
-
-h += chapter("Process", "From light lab to floating glass.", """
-      <p>The work started in a light lab, testing light sources, colour temperature and how light travels through Reijmyre's glass. Coloured glass tints everything and can't stop glare, so the source had to be hidden and the light had to lift the colour rather than depend on it.</p>
-      <p>A moodboard then set the expression the lamp should carry: elegant, ambient, classic, Scandinavian and inviting. The insights and the moodboard fed straight into sketching. Of the early concepts, No. 3 became Celina: a small coloured vase suspended inside a large clear <i>Lina</i> vase. Physical test versions were used to judge proportions, hanging height and the glow of the inner glass before committing to the final construction.</p>""",
+h += chapter("Process", "From light lab to floating glass.", "",
+    cols([("Light lab", "Testing light sources, colour temperature and how light travels through Reijmyre's glass."),
+          ("Insight", "Coloured glass tints everything and can't stop glare, so the source is hidden and the light lifts the colour."),
+          ("Moodboard and sketches", "Elegant, ambient, classic, Scandinavian and inviting. Of the early concepts, No. 3 became Celina."),
+          ("Test versions", "Physical tests to judge proportions, hanging height and the glow of the inner glass.")], numbered=True) +
     media("", fig("cel-moodboard.jpg", "Moodboard with five images labelled elegant, ambient, classic, Scandinavian and inviting", "r169"), cap="Moodboard defining the expression of the lamp.") +
     media("c2", fig("cel-lab-grid.jpg", "Twelve light-lab tests with different light sources and Reijmyre glass", "r11 fit"), fig("cel-sketches.jpg", "Early concept sketches No. 1 to No. 6", "r11 fit"), cap="Light-lab tests and early concept sketches. Celina grew out of No. 3.") +
     media("c2", fig("cel-proto.jpg", "Early test version of Celina with a blue inner glass", "r34"), fig("cel-proto-hang.jpg", "Test version hanging in the workshop to judge height and proportions", "r34"), cap="Test versions on the bench and hanging in the workshop.") +
     media("c2", fig("cel-pink-glass.jpg", "Pink Lina glass with a water-jet cut opening for the cable and socket", "r34"), fig("cel-pink-test.jpg", "An early test version in pink glass hanging from its cable", "r34"), cap="An early test in pink glass, with a water-jet cut opening."))
 
 h += chapter("Production &amp; assembly", "Optimised for production, easy to assemble.", """
-      <p>Celina uses glass Reijmyre already blows, so no new moulds are needed. Everything else is standard or simple to make: a GX53 LED puck, three CNC-turned aluminium parts modelled in Fusion 360, and one bent sheet-metal bracket. The construction tolerates the natural variation of hand-blown glass.</p>
-      <p>Assembly is just as simple. The glass is clamped mechanically between the top cap and the lower lock ring, and the inner vase hangs from three 1 mm wires tensioned in the lock ring, which adds to the floating effect. A 300 mm gravity pipe keeps the lamp hanging straight, the power cable runs hidden through the pendant tube, and the bracket with integrated strain relief lets the ceiling canopy stay small.</p>""" + ph("CAD / section view", "Add a Fusion 360 section view showing the parts.", "txt"),
+      <p>Everything except the glass is standard or simple to make, and the construction tolerates the natural variation of hand-blown glass.</p>""" + specs([
+        ("Glass", "Existing <i>Lina</i> vases from Reijmyre, no new moulds"),
+        ("Metal parts", "Three CNC-turned aluminium parts, modelled in Fusion 360"),
+        ("Light source", "GX53 LED puck, fully hidden"),
+        ("Suspension", "Inner vase on three 1 mm wires, tensioned in the lock ring"),
+        ("Hanging", "300 mm gravity pipe keeps the lamp straight"),
+        ("Ceiling", "Bent bracket with strain relief keeps the canopy small")]) + ph("CAD / section view", "Add a Fusion 360 section view showing the parts.", "txt"),
     media("", fig("cel-exploded.jpg", "Exploded view of Celina with every part named: metal wires, Lina vase, lock ring, outer Lina vase, diffuser, GX53, mounting bracket, top cap and gravity pipe", "fit")) +
     media("c2", fig("cel-pipe.jpg", "The gravity pipe mounted in the CNC-turned aluminium top cap", "r34"), fig("cel-bracket.jpg", "Bent sheet-metal bracket with strain relief mounted on the GX53 holder", "r34"), cap="The turned top cap with its gravity pipe, and the bent sheet-metal bracket with built-in strain relief.") +
     media("c2", fig("cel-wiring.jpg", "Fitting the bracket and GX53 holder into the top cap", "r34"), fig("cel-lit.jpg", "The assembled lamp lit, with the blue inner glass glowing inside the ribbed outer glass", "r34"), cap="Fitting the light source into the top cap, and the assembled lamp lit."))
 
-h += chapter("Light", "Soft ambience and useful light from one lamp.", """
-      <p>The top of the inner vase is cut off so it directs an even beam downwards, and a fabric diffuser in the lock ring spreads the light and prevents glare. Most of the light falls through the inner vase onto the table, while the ribbed outer glass glows softly around it.</p>
+h += statement("Light", 'Soft ambience around the lamp, <span class="mute">useful light on the table below it.</span>', """
+      <p class="st-body">The top of the inner vase is cut off to send an even beam downwards and a fabric diffuser prevents glare, while the ribbed outer glass glows softly around it.</p>
       <div class="facts-row"><div>GX53<small>LED puck</small></div><div>2700 K<small>Colour temperature</small></div><div>500 lm<small>Luminous flux</small></div><div>300 mm<small>Gravity pipe</small></div></div>""",
     media("c2", svgfig("celina-light.svg", "r11 fit"), fig("cel-diffuser.jpg", "How the fabric diffuser scatters light", "r11 fit")))
 
 h += chapter("Vernissage", "Shown at the final vernissage.", """
-      <p>The finished prototype was presented at Linköping University in a staged dining scene, together with Reijmyre's glass. Celina gives Reijmyre a way to sell pieces they already make as a premium light.</p>""",
+      <p>Presented at Linköping University in a staged dining scene, together with Reijmyre's glass.</p>""",
     media("c2", fig("cel-vernissage-1.jpg", "Celina at the vernissage", "r34"), fig("cel-vernissage-2.jpg", "Celina lit above the dinner table at the vernissage", "r34")))
+h += quote('Glass Reijmyre already makes, <span class="mute">turned into a premium light.</span>')
 h += bleed("cel-hero.jpg", "Celina hanging by a large window over the sea in a timber room", crop=True, pos="50% 45%")
 write("celina.html", h + foot("modulix.html", "Modulix"))
 
@@ -237,21 +263,23 @@ h += statement("Introduction", 'One aluminium module, clamped together, <span cl
       </script>
     </div>
 """)
-h += chapter("Process", "From sketch to sheet metal.", """
-      <p>The process started wide with brutalist, mesh-like forms, moved on to repeating forms, and finally landed on a module system where one part can become many: a single rounded module that combines into every piece of furniture.</p>""",
+h += chapter("Process", "From sketch to sheet metal.", "",
+    cols([("Brutalist forms", "A wide start with heavy, mesh-like shapes from the theme."),
+          ("Repeating forms", "One shape used again and again to build different pieces."),
+          ("Module system", "A single rounded module that becomes every piece of furniture."),
+          ("Models", "Foam blocks, then a sheet-metal scale model, to test proportions and joints.")], numbered=True) +
     media("", fig("mod-sketches.jpg", "Sketches moving from brutalist mesh forms through repeating forms to a system of modules", "r169 fit"), cap="From brutalist forms to repeating forms to a module system.") +
     media("c2", fig("mod-foam-1.jpg", "Blue foam model of modules combined into a chair", "r11"), fig("mod-foam-2.jpg", "Blue foam blocks testing how modules combine", "r11"), cap="Foam models testing how the modules combine.") +
     media("c2", fig("mod-process-1.jpg", "Cutting perforated sheet for the scale model", "r34"), fig("mod-model.jpg", "The finished Modulix scale model as a sofa", "r34"), cap="Building the scale model."))
-h += chapter("Technical details", "Light, dry and simple to assemble.", """
-      <ul class="points">
-        <li><b>Aluminium module</b>Perforated aluminium sheet, about 8.5 kg per module, light enough to carry and stack.</li>
-        <li><b>Clamp and feet</b>Powder-coated steel with EPDM rubber, protecting both the module and the deck.</li>
-        <li><b>Quick-dry cushions</b>Polyester mesh with quick-dry foam and a cover in solution-dyed polyester.</li>
-        <li><b>Simple mounting</b>Modules are bolted together through the side walls with one clamp.</li>
-        <li><b>Production</b>Each module is cut from flat aluminium sheet, perforated and bent twice into its rounded shape. An inner frame of bent tube in a two-part profile stiffens it.</li>
-      </ul>""",
+h += chapter("Technical details", "Light, dry and simple to assemble.", specs([
+        ("Module", "Perforated aluminium sheet, about 8.5 kg, light enough to carry and stack"),
+        ("Production", "Cut from flat sheet, perforated and bent twice, with an inner frame of bent tube in a two-part profile"),
+        ("Clamp and feet", "Powder-coated steel with EPDM rubber, protecting both the module and the deck"),
+        ("Mounting", "Modules bolt together through the side walls with one clamp"),
+        ("Cushions", "Polyester mesh with quick-dry foam and a cover in solution-dyed polyester")]),
     media("", fig("mod-production.jpg", "Production steps: flat sheet, perforated, bent twice, with bent tube frames in a two-part profile; and the clamp joining two modules", "fit"), cap="Production from flat sheet to module, and the clamp that joins modules.") +
     media("c2", fig("mod-clamp.jpg", "Clamp joining two modules", "r45"), fig("mod-cad.jpg", "CAD model of a single Modulix module with its perforated sheet and tube frame", "r45 fit")))
+h += quote('Create, rebuild and adapt. <span class="mute">Modulix makes it possible.</span>')
 h += bleed("mod-exhibit.jpg", "The Modulix scale model in front of the project poster at the exhibition", crop=True, pos="50% 70%")
 write("modulix.html", h + foot("oris.html", "ORIS"))
 
@@ -263,23 +291,16 @@ h += intro("Course project · Year 1 · 2024", "ORIS",
            [("Year", "2024"), ("Context", "Year 1, Linköping University"),
             ("Products", "S1 compact speaker, S2 home speaker, S3 headphones"), ("Capabilities", "Industrial design, CMF, CAD, rendering")])
 
-h += chapter("Introduction", "One family, one language.", """
-      <p>The brief was to develop a technical product with clear requirements on production, users and design, then extend it into a product family that proves a coherent design language.</p>
-      <p>ORIS is a simple, Scandinavian family: the compact <b>S1</b> speaker, the larger <b>S2</b> home speaker and the <b>S3</b> headphones. Calm, soft volumes are broken by precise horizontal grooves, which tie the two speakers together, while S1 and S3 share the same organic, pebble-like forms.</p>""",
-    media("c3", fig("oris-s1.jpg", "S1 compact speaker with horizontal grooves", "r45"), fig("oris-s3.jpg", "S3 headphones on their aluminium stand", "r45"), fig("oris-s2.jpg", "S2 home speaker with horizontal grooves", "r45")))
-
-h += chapter("Materials", "Metal and textile in balance.", """
-      <p>The material choices are meant to echo the calm of nature. Metal gives the products a precise, elegant feel and frames the sound, while a soft mesh textile on the headband and ear cushions adds warmth. Together they create a clear contrast: cool and exact against soft and tactile.</p>
-      <ul class="points">
-        <li><b>Metal</b>Polished shells and grooved bodies for an exact, premium expression.</li>
-        <li><b>Mesh textile</b>Soft, breathable surfaces where the products meet the body.</li>
-        <li><b>Horizontal grooves</b>One shared detail that reads across the whole family.</li>
-        <li><b>Soft volumes</b>Rounded, organic forms that feel calm on a desk or a shelf.</li>
-      </ul>""")
-
-h += chapter("Energy", "Headphones that charge from the light around you.", """
-      <p>The headband of S3 integrates a solar cell from Epishine, a Linköping company that prints thin, flexible organic solar cells made to harvest energy from everyday indoor light. Because the cell is flexible and only fractions of a millimetre thick, it can follow the curve of the headband instead of sitting on top as a separate panel.</p>
-      <p>The concept: the headphones top up their battery whenever they are worn or left on the stand in a lit room, so they need charging less often. The cell also becomes part of the look, a fine pattern of cells in the headband that shows the technology instead of hiding it.</p>""",
+h += statement("Introduction", 'Three products, one design language: <span class="mute">calm, soft volumes broken by precise horizontal grooves.</span>', """
+      <p class="st-body">The brief was to develop a technical product with clear requirements on production, users and design, then extend it into a product family.</p>""",
+    media("c3", fig("oris-s1.jpg", "S1 compact speaker with horizontal grooves", "r45"), fig("oris-s3.jpg", "S3 headphones on their aluminium stand", "r45"), fig("oris-s2.jpg", "S2 home speaker with horizontal grooves", "r45")) +
+    cols([("S1", "Compact speaker. Shares its organic, pebble-like form with the headphones."),
+          ("S3", "Headphones with a solar cell in the headband."),
+          ("S2", "Home speaker. Shares the horizontal grooves with S1.")]))
+h += statement("Materials", 'Cool, exact metal <span class="mute">against soft, tactile textile.</span>', """
+      <p class="st-body">Materials chosen to echo the calm of nature: metal frames the sound and gives a precise feel, while mesh textile adds warmth where the products meet the body.</p>""")
+h += statement("Energy", 'Headphones that charge <span class="mute">from the light around them.</span>', """
+      <p class="st-body">A thin, flexible printed solar cell from Epishine, a Linköping company, follows the curve of the S3 headband and tops up the battery whenever the headphones are worn or left in a lit room. The cell becomes part of the look instead of being hidden.</p>""",
     media("c2", fig("oris-solar.jpg", "Close-up of the S3 headband with the integrated solar cell", "r45"), fig("oris-epishine.jpg", "A flexible Epishine solar cell bent between two fingers", "r45"), cap="Right: Epishine's flexible solar cell. Photo: Epishine."))
 
 h += chapter("Process", "Sketch, model, refine.", ph("Sketches & CAD", "Add early form sketches and CAD views of the headphones and speakers.", "txt"))
@@ -290,21 +311,23 @@ write("oris.html", h + foot("abacka.html", "Åbacka"))
 h = head("Åbacka", "Åbacka, site-specific outdoor furniture by Stångån in Linköping. Linköping University 2024.", "card-abacka.jpg")
 h += cover("aba-hero-wide.jpg", "Åbacka deck, slatted loungers and pergola by the river", "50% 60%")
 h += intro("Course project · Year 1 · 2024", "Åbacka",
-           "Outdoor furniture for one specific place: the riverbank along Stångån in Linköping. Form, function and material taken from the site itself.",
+           "Site-specific outdoor furniture, with form, function and material taken from the place itself.",
            [("Year", "2024"), ("Context", "Year 1, Linköping University"),
             ("Location", "Stångån, Linköping")])
-h += chapter("Introduction", "Reading the riverbank.", """
-      <p>The brief was to create custom outdoor furniture for a place along Stångån, letting the site drive form, function and materials. The work started on site, studying how people move along the path, where they stop and how the slope meets the water.</p>""",
+h += statement("Introduction", 'Outdoor furniture for one place: <span class="mute">the riverbank along Stångån in Linköping.</span>', """
+      <p class="st-body">The work started on site, studying how people move along the path, where they stop and how the slope meets the water.</p>""",
     media("c2", fig("aba-site-1.jpg", "The path along Stångån", "r45"), fig("aba-site-2.jpg", "People walking along the riverbank", "r45")))
 h += quote("From generation to generation.")
 h += chapter("Concept", "Shaped by the body, built to last.", """
-      <p>Åbacka has a rational origin in production technology and, above all, in the shape of the human body. Slats in quartz composite on robust steel blades mean no part repeats another, creating a unique and durable place to sit, lie and gather by the water.</p>""",
+      <p>A rational origin in production technology and, above all, in the shape of the human body.</p>""" + specs([
+        ("Slats", "Quartz composite"),
+        ("Structure", "Robust steel blades"),
+        ("Form", "Follows the body, so no part repeats another")]),
     media("c2", ph("Sketches", "Add your concept sketches of the loungers and pergola.", "r45"), fig("aba-proc-3.jpg", "Cutting sections for the model", "r45")))
 h += chapter("Model", "Built slice by slice.", """
       <p>The form was developed through physical models, building the loungers from stacked, individually cut sections, the same logic as the full-scale slats.</p>""",
     media("c3", fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34")))
-h += chapter("Result", "A place where people meet.", """
-      <p>Åbacka was created to bring people together. The seating faces both the water and the path, so different groups can meet on the same piece of furniture.</p>
-      <p>The tree-like pergola connects the path with the meeting place, while giving shade and a sheltered feeling.</p>""",
+h += statement("Result", 'A place where people meet, <span class="mute">facing both the water and the path.</span>', """
+      <p class="st-body">The tree-like pergola connects the path with the meeting place and gives shade and a sheltered feeling.</p>""",
              media("", fig("aba-sheet.jpg", "Åbacka presentation sheet", "fit paper")))
 write("abacka.html", h + foot("celina.html", "Celina"))
