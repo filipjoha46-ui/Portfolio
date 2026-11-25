@@ -16,11 +16,12 @@
   if(reduce||!('IntersectionObserver' in window)) return;
   document.querySelectorAll('.facts-row > div').forEach(function(box){
     var t=box.firstChild; if(!t||t.nodeType!==3) return;
-    var m=t.nodeValue.match(/^(\d+(?:\.\d+)?)(.*)$/); if(!m) return;
-    var end=parseFloat(m[1]),dec=(m[1].split('.')[1]||'').length,unit=m[2];
+    var m=t.nodeValue.match(/^([+\u2212-]?)(\d+(?:\.\d+)?)(.*)$/); if(!m) return;
+    var sign=m[1],end=parseFloat(m[2]),dec=(m[2].split('.')[1]||'').length,unit=m[3];
     var num=document.createElement('span'); num.className='count';
-    num.textContent=m[1];
+    num.textContent=m[2];
     box.replaceChild(num,t); box.insertBefore(document.createTextNode(unit),num.nextSibling);
+    if(sign) box.insertBefore(document.createTextNode(sign),num);
     num.style.minWidth=num.getBoundingClientRect().width+'px';  // keep the width steady while digits change
     num.style.textAlign='right';
     num.textContent=(0).toFixed(dec);
