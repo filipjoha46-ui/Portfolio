@@ -356,8 +356,8 @@ h += statement("Process", 'Repetition as a method: <span class="mute">simple dis
     media("", fig("aba-discs.jpg", "Cardboard and foam discs glued into flowing, wave-like forms on the workshop table", "fit")) +
     media("c2", fig("aba-proc-3.jpg", "Cutting sections for the model", "r34"), fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), cap="From loose experiments to cut sections.") +
     media("c2", fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34"), cap="Assembling the base, and the finished model."))
-h += statement("Meeting place", 'Seats that face both ways, <span class="mute">so different groups can share one piece of furniture.</span>', """
-      <p class="st-body">Some sit facing the path and the people walking by, others face the water. The deck reaches all the way to the river, so there is room to sit right at the edge.</p>""",
+h += statement("Meeting place", 'Two sofas with seats back to back, <span class="mute">so different groups can share the same place.</span>', """
+      <p class="st-body">Some sit facing the path and the people walking by, others face the water. A passage between the sofas leads down to the river, where there is room to sit right at the edge of the deck.</p>""",
     media("", svgfig("abacka-meeting.svg", "r32 fit"), cap="Top view of the meeting place."))
 h += statement("Result", 'A tree-like pergola <span class="mute">connects the path with the meeting place and gives shade and shelter.</span>', "",
              media("", fig("aba-sheet.jpg", "Åbacka presentation sheet", "fit paper")))
