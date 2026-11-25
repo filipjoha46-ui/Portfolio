@@ -64,8 +64,9 @@ def foot(next_href, next_name):
 """
 
 
-def cover(src, alt, pos="50% 50%"):
-    return f'  <div class="case-cover"><img src="../assets/img/{src}" alt="{alt}" style="object-position:{pos}"></div>\n'
+def cover(src, alt, pos="50% 50%", cap=None):
+    c = f'<p class="cap wrap">{cap}</p>' if cap else ""
+    return f'  <div class="case-cover"><img src="../assets/img/{src}" alt="{alt}" style="object-position:{pos}"></div>{c}\n'
 
 
 def cover_video(src, poster, alt):
@@ -193,7 +194,7 @@ h += video_band("celina-exploded.mp4", "celina-exploded.jpg", "Animated exploded
 
 h += statement("Introduction", 'Existing glass, new light. <span class="mute">Two pieces from Reijmyre\'s <i>Lina</i> collection, one inside the other, turned into a ceiling lamp.</span>', """
       <p class="st-body">A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810: reproducible lighting from glass already in production, built on standard components.</p>""",
-    media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45")))
+    media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45"), cap="Celina rendered into background photos by Muuto (left) and Poul Henningsen (right)."))
 h += chapter("Three principles of light", "Built on ambient luminescence.", """
       <p>Lighting designer Richard Kelly describes three kinds of light. Celina is built on the first.</p>""",
     cols([("Ambient luminescence", "Soft, shadowless light that fills the room. The principle behind Celina."),
@@ -231,12 +232,12 @@ h += chapter("Vernissage", "Shown at the final vernissage.", """
       <p>Presented at Linköping University in a staged dining scene, together with Reijmyre's glass.</p>""",
     media("c2", fig("cel-vernissage-1.jpg", "Celina at the vernissage", "r34"), fig("cel-vernissage-2.jpg", "Celina lit above the dinner table at the vernissage", "r34")))
 h += quote('Glass Reijmyre already makes, <span class="mute">turned into a premium light.</span>')
-h += bleed("cel-closing.jpg", "Celina hanging by a large window over the sea in a timber room", crop=True, pos="50% 50%")
+h += bleed("cel-closing.jpg", "Celina hanging by a large window over the sea in a timber room", crop=True, pos="50% 50%", cap="Background photo: Poul Henningsen.")
 write("celina.html", h + foot("modulix.html", "Modulix"))
 
 # ======================================================== MODULIX
 h = head("Modulix", "Modulix, modular outdoor furniture in perforated metal. Materials for Design, Linköping University 2025.", "card-modulix.jpg")
-h += cover("mod-hero-wide.jpg", "Modulix sofa in perforated aluminium on a sunlit wooden deck outside a timber house among pine trees", "47% 70%")
+h += cover("mod-hero-wide.jpg", "Modulix sofa in perforated aluminium on a sunlit wooden deck outside a timber house among pine trees", "47% 70%", cap="Modulix rendered into a background photo from Grythyttan.")
 h += intro("Materials for Design · 2025", "Modulix",
            "Modular outdoor furniture in perforated aluminium, designed to get people out into their gardens.",
            [("Year", "2025"), ("Context", "Materials for Design, Linköping University"),
@@ -329,9 +330,7 @@ h += """  <section class="calc-band" aria-label="What the light is worth">
 h += '  <div class="fp-band">\n'
 h += statement("Footprint", 'About 30 % lower climate footprint <span class="mute">than typical over-ear headphones, before they are even switched on.</span>', """
       <div class="facts-row"><div class="good">&minus;30 %<small>Cradle-to-gate CO&#8322;e</small></div><div>5.25 kg<small>CO&#8322;e per S3</small></div><div class="good">&minus;2.2 kg<small>Per pair produced</small></div></div>""",
-    """    <p class="fp-title">Cradle-to-gate CO&#8322;e, concept estimate</p>
-    <div class="fp-compare reveal"><div class="fp-col std"><h3>Typical over-ear headphones</h3><div class="fp-row"><span>Materials</span><b>3.40 kg</b><i style="width:100.0%"></i></div><div class="fp-row"><span>Electronics</span><b>2.20 kg</b><i style="width:64.7%"></i></div><div class="fp-row"><span>Battery</span><b>0.25 kg</b><i style="width:7.4%"></i></div><div class="fp-row"><span>Manufacturing &amp; logistics</span><b>1.60 kg</b><i style="width:47.1%"></i></div><div class="fp-row fp-total"><span>Total</span><b>7.45 kg</b></div></div><div class="fp-col oris"><h3>ORIS S3</h3><div class="fp-row"><span>Materials</span><b>1.60 kg</b><i style="width:47.1%"></i></div><div class="fp-row"><span>Electronics and solar cell</span><b>2.25 kg</b><i style="width:66.2%"></i></div><div class="fp-row"><span>Battery</span><b>0.20 kg</b><i style="width:5.9%"></i></div><div class="fp-row"><span>Manufacturing &amp; logistics</span><b>1.20 kg</b><i style="width:35.3%"></i></div><div class="fp-row fp-total"><span>Total</span><b>5.25 kg</b></div></div></div>
-    <div class="fp-props reveal"><p class="fp-title">Where the footprint comes from, ORIS S3</p><div class="fp-stack"><i class="s0" style="width:42%" title="Electronics and solar cell 42 %"></i><i class="s1" style="width:23%" title="Manufacturing &amp; logistics 23 %"></i><i class="s2" style="width:21%" title="Aluminium 21 %"></i><i class="s3" style="width:6%" title="Textile and foam 6 %"></i><i class="s4" style="width:4%" title="Polymers 4 %"></i><i class="s5" style="width:4%" title="Battery 4 %"></i></div><dl><div><dt><span class="sw s0"></span>Electronics and solar cell</dt><dd>42 %</dd></div><div><dt><span class="sw s1"></span>Manufacturing &amp; logistics</dt><dd>23 %</dd></div><div><dt><span class="sw s2"></span>Aluminium</dt><dd>21 %</dd></div><div><dt><span class="sw s3"></span>Textile and foam</dt><dd>6 %</dd></div><div><dt><span class="sw s4"></span>Polymers</dt><dd>4 %</dd></div><div><dt><span class="sw s5"></span>Battery</dt><dd>4 %</dd></div></dl></div>
+    """    <div class="fp-props reveal"><p class="fp-title">Where the footprint comes from, ORIS S3</p><div class="fp-stack"><i class="s0" style="width:42%" title="Electronics and solar cell 42 %"></i><i class="s1" style="width:23%" title="Manufacturing &amp; logistics 23 %"></i><i class="s2" style="width:21%" title="Aluminium 21 %"></i><i class="s3" style="width:6%" title="Textile and foam 6 %"></i><i class="s4" style="width:4%" title="Polymers 4 %"></i><i class="s5" style="width:4%" title="Battery 4 %"></i></div><dl><div><dt><span class="sw s0"></span>Electronics and solar cell</dt><dd>42 %</dd></div><div><dt><span class="sw s1"></span>Manufacturing &amp; logistics</dt><dd>23 %</dd></div><div><dt><span class="sw s2"></span>Aluminium</dt><dd>21 %</dd></div><div><dt><span class="sw s3"></span>Textile and foam</dt><dd>6 %</dd></div><div><dt><span class="sw s4"></span>Polymers</dt><dd>4 %</dd></div><div><dt><span class="sw s5"></span>Battery</dt><dd>4 %</dd></div></dl></div>
     <p class="fp-title">Material highlights</p>
     <div class="fp-cards reveal"><div class="fp-card"><div class="swatch alu"></div><h3>Recycled aluminium</h3><p>Ear cups and stand in recycled aluminium, which takes around 5 % of the energy of new aluminium and can be recycled again and again.</p></div><div class="fp-card"><div class="swatch mesh"></div><h3>Recycled mesh textile</h3><p>Headband and ear cushions in a mesh woven from recycled PET. The cushions are removable, so they can be washed or replaced.</p></div><div class="fp-card"><div class="swatch cell"></div><h3>Printed solar cell</h3><p>Epishine's organic cell is printed in a thin roll-to-roll process and replaces part of the battery the headphones would otherwise need.</p></div></div>
 """ + cols([("Use phase", "Light tops up the battery, so the headphones are charged less often, and the battery works through fewer cycles over its life."),
