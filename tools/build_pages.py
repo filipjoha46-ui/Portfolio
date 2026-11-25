@@ -351,15 +351,13 @@ h += statement("Introduction", 'Outdoor furniture for one place: <span class="mu
       <p class="st-body">The work started on site, studying how people move along the path, where they stop and how the slope meets the water.</p>""",
     media("c2", fig("aba-site-1.jpg", "The path along Stångån", "r45"), fig("aba-site-2.jpg", "People walking along the riverbank", "r45")))
 h += quote("From generation to generation.")
-h += chapter("Concept", "Shaped by the body, built to last.", """
-      <p>A rational origin in production technology and, above all, in the shape of the human body.</p>""" + specs([
-        ("Slats", "Quartz composite"),
-        ("Structure", "Robust steel blades"),
-        ("Form", "Follows the body, so no part repeats another")]),
-    media("c2", ph("Sketches", "Add your concept sketches of the loungers and pergola.", "r45"), fig("aba-proc-3.jpg", "Cutting sections for the model", "r45")))
+h += statement("Concept", 'Repetition as a method: <span class="mute">simple discs and slices, cut and stacked, to find how the riverbank could become a place to sit.</span>', """
+      <p class="st-body">Quick models in cardboard and foam explored rhythm, curves and height before any form was fixed.</p>""",
+    media("", fig("aba-discs.jpg", "Cardboard and foam discs glued into flowing, wave-like forms on the workshop table", "fit")) +
+    media("c2", fig("aba-proc-3.jpg", "Cutting sections for the model", "r34"), fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), cap="From loose experiments to cut sections."))
 h += chapter("Model", "Built slice by slice.", """
-      <p>The form was developed through physical models, building the loungers from stacked, individually cut sections, the same logic as the full-scale slats.</p>""",
-    media("c3", fig("aba-proc-1.jpg", "Model parts on the workshop table", "r34"), fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34")))
+      <p>The loungers were built from stacked, individually cut sections, the same logic as the full-scale slats.</p>""",
+    media("c2", fig("aba-proc-4.jpg", "Assembling the model base", "r34"), fig("aba-model-1.jpg", "Finished model", "r34")))
 h += statement("Result", 'A place where people meet, <span class="mute">facing both the water and the path.</span>', """
       <p class="st-body">The tree-like pergola connects the path with the meeting place and gives shade and a sheltered feeling.</p>""",
              media("", fig("aba-sheet.jpg", "Åbacka presentation sheet", "fit paper")))
