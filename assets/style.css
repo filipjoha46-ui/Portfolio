@@ -120,6 +120,7 @@ p+p{margin-top:1em}
 .chapter-text p{font-size:18px}
 .facts-row{display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,64px);margin-top:28px}
 .facts-row div{font-size:clamp(26px,2.6vw,36px);letter-spacing:-.03em;line-height:1.1}
+.facts-row .count{display:inline-block;font-variant-numeric:tabular-nums}
 .facts-row small{display:block;font-size:13px;color:var(--muted);letter-spacing:.04em;margin-top:6px}
 .points{list-style:none;margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px 32px}
 .points li{border-top:1px solid var(--line);padding-top:12px;font-size:16px;color:var(--muted)}
