@@ -194,7 +194,7 @@ h += video_band("celina-exploded.mp4", "celina-exploded.jpg", "Animated exploded
 
 h += statement("Introduction", 'Existing glass, new light. <span class="mute">Two pieces from Reijmyre\'s <i>Lina</i> collection, one inside the other, turned into a ceiling lamp.</span>', """
       <p class="st-body">A bachelor's thesis for Reijmyre Glasbruk, which has blown glass by hand since 1810: reproducible lighting from glass already in production, built on standard components.</p>""",
-    media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45"), cap="Celina rendered into background photos by Muuto (left) and Poul Henningsen (right)."))
+    media("c2", fig("cel-family.jpg", "Three Celina lamps with blue, green and amber inner glass", "r45"), fig("cel-detail.jpg", "Close-up of Celina with blue inner glass by a window over the sea", "r45"), cap="Background photos: Muuto (left), Poul Henningsen (right)."))
 h += chapter("Three principles of light", "Built on ambient luminescence.", """
       <p>Lighting designer Richard Kelly describes three kinds of light. Celina is built on the first.</p>""",
     cols([("Ambient luminescence", "Soft, shadowless light that fills the room. The principle behind Celina."),
@@ -237,7 +237,7 @@ write("celina.html", h + foot("modulix.html", "Modulix"))
 
 # ======================================================== MODULIX
 h = head("Modulix", "Modulix, modular outdoor furniture in perforated metal. Materials for Design, Linköping University 2025.", "card-modulix.jpg")
-h += cover("mod-hero-wide.jpg", "Modulix sofa in perforated aluminium on a sunlit wooden deck outside a timber house among pine trees", "47% 70%", cap="Modulix rendered into a background photo from Grythyttan.")
+h += cover("mod-hero-wide.jpg", "Modulix sofa in perforated aluminium on a sunlit wooden deck outside a timber house among pine trees", "47% 70%", cap="Background photo: Grythyttan.")
 h += intro("Materials for Design · 2025", "Modulix",
            "Modular outdoor furniture in perforated aluminium, designed to get people out into their gardens.",
            [("Year", "2025"), ("Context", "Materials for Design, Linköping University"),
