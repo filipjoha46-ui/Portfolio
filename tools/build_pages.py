@@ -26,9 +26,9 @@ def head(title, desc, og):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="../index.html">Filip Johansson</a>
+    <a class="logo" href="../">Filip Johansson</a>
     <nav class="nav">
-      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../#work" aria-current="page">Work</a>
       <a href="../about.html">About</a>
     </nav>
   </div>
