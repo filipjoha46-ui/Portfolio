@@ -11,6 +11,18 @@
   if(reduce){document.querySelectorAll('video[autoplay]').forEach(function(v){v.removeAttribute('autoplay');v.pause();});}
   var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
 
+  // Rotating word: <span class="rotate" data-words="a,b,c"> swaps word every couple of seconds
+  document.querySelectorAll('.rotate[data-words]').forEach(function(el){
+    var words=el.dataset.words.split(','),i=0;
+    if(reduce) return;
+    setInterval(function(){
+      var old=el.firstElementChild; i=(i+1)%words.length;
+      var nw=document.createElement('span'); nw.textContent=words[i]; nw.className='in';
+      old.className='out'; el.appendChild(nw);
+      setTimeout(function(){ if(old.parentNode) old.parentNode.removeChild(old); nw.className=''; },600);
+    },2200);
+  });
+
   // Key figures (2700 K, 500 lm, 8.5 kg...) count up from zero when they scroll into view.
   // Only figures that start with a number animate; names like GX53 stay as they are.
   if(reduce||!('IntersectionObserver' in window)) return;

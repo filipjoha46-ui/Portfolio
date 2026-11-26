@@ -101,6 +101,11 @@ main > .case-intro:first-child{padding-top:clamp(120px,14vw,200px)}
 .chapter-text h2{margin-bottom:22px;max-width:18ch}
 .chapter-text h2.statement{max-width:23ch;margin-bottom:clamp(24px,3vw,40px)}
 .statement .mute{color:var(--muted)}
+.rotate{position:relative;display:inline-grid;vertical-align:bottom;overflow:hidden;color:var(--ink)}
+.rotate > span{grid-area:1/1;display:inline-block;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .55s}
+.rotate > span.in{animation:rot-in .55s cubic-bezier(.2,.7,.2,1)}
+.rotate > span.out{transform:translateY(-100%);opacity:0}
+@keyframes rot-in{from{transform:translateY(100%);opacity:0}to{transform:none;opacity:1}}
 .st-body{max-width:44ch;color:var(--muted)}
 .quote .mute{color:var(--muted)}
 .wrap:has(> .quote) + .bleed{margin-top:clamp(32px,4.5vw,64px)}

@@ -242,7 +242,7 @@ h += intro("Materials for Design · 2025", "Modulix",
            "Modular outdoor furniture in perforated aluminium, designed to get people out into their gardens.",
            [("Year", "2025"), ("Context", "Materials for Design, Linköping University"),
             ("Theme", "Inconcrete brutalism"), ("Direction", "UT&amp;NJUT, get out and enjoy")])
-h += statement("Introduction", 'One aluminium module, clamped together, <span class="mute">becomes a side table, a sofa or a sun lounger, and stacks away when summer ends.</span>', """
+h += statement("Introduction", 'One aluminium module, clamped together, <span class="mute">becomes a <span class="rotate" data-words="sofa,chair,table,sunbed"><span>sofa</span></span>.</span>', """
       <p class="st-body">Outdoor furniture for a customer group in Vadstena that handles rain and changing weather, dries fast and never needs carrying in.</p>
       <div class="facts-row"><div>1<small>Module</small></div><div class="inf">&infin;<small>Configurations</small></div><div>8.5 kg<small>Per module</small></div></div>""",
     """
