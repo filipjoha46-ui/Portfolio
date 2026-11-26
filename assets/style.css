@@ -177,6 +177,11 @@ main > .case-intro:first-child{padding-top:clamp(120px,14vw,200px)}
 .fp-band .fp-col.std .fp-row i{background:#55534E}
 .fp-band .fp-col.oris .fp-total b{color:#7CCB8F}
 .good{color:#7CCB8F}
+/* once a page goes dark (ORIS), stay dark to the end: closing image, next project and footer */
+main:has(.fp-band) ~ footer.contact, .fp-band ~ .wrap, .fp-band ~ .bleed{background:#141414;color:#F2F1ED;--ink:#F2F1ED;--muted:#9B9993;--line:#2C2B29;--bg:#141414}
+.fp-band ~ .wrap{max-width:none;margin:0;padding-left:max(var(--pad),calc((100% - var(--max))/2 + var(--pad)));padding-right:max(var(--pad),calc((100% - var(--max))/2 + var(--pad)))}
+body:has(.fp-band){background:#141414}
+.fp-band ~ .wrap .next a:hover, main:has(.fp-band) ~ footer .contact-links a:hover{border-color:#F2F1ED}
 .mat{padding-top:clamp(64px,9vw,136px)}
 .mat > .label{padding-top:22px;border-top:1px solid var(--line);width:100%;max-width:none}
 .mat-words{font-size:clamp(48px,8vw,128px);font-weight:500;letter-spacing:-.05em;line-height:.95;margin:clamp(28px,4vw,56px) 0 0;max-width:none}
